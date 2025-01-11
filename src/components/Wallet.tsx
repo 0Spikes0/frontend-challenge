@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -20,11 +20,10 @@ const Wallet: React.FC = () => {
       return data.ethereum.usd;
     } catch (error) {
       console.error("Error fetching conversion rate:", error);
-      return 0; // Fallback to 0 if the API call fails
+      return 0;
     }
   };
 
-  // Connect Wallet Function
   const connectWallet = async () => {
     if (!window.ethereum) {
       alert("MetaMask is not installed. Please install it to use this feature.");
@@ -48,26 +47,17 @@ const Wallet: React.FC = () => {
       const usdValue = (parseFloat(formattedBalance) * dynamicRate).toFixed(2);
       setUsdValue(usdValue);
 
-      // Save to localStorage
-      localStorage.setItem("walletAddress", account);
-      localStorage.setItem("networkName", network.name);
-      localStorage.setItem("balance", formattedBalance);
-      localStorage.setItem("usdValue", usdValue);
-      localStorage.setItem("isConnected", "true");
-
       setIsConnected(true);
     } catch (error) {
       console.error("Error connecting to MetaMask:", error);
     }
   };
 
-  // Shorten address function
   const shortenAddress = (address: string | null) => {
     if (!address) return "";
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
   };
 
-  // Copy wallet address
   const copyToClipboard = () => {
     if (walletAddress) {
       navigator.clipboard.writeText(walletAddress).then(
@@ -77,33 +67,16 @@ const Wallet: React.FC = () => {
     }
   };
 
-  // View wallet address in Explorer
   const viewInExplorer = () => {
     if (!walletAddress) return;
 
-    const explorerBaseUrl =
-      networkName === "homestead"
-        ? "https://etherscan.io/address/"
-        : "https://etherscan.io/address/";
+    const explorerBaseUrl = "https://etherscan.io/address/";
     const explorerUrl = `${explorerBaseUrl}${walletAddress}`;
     window.open(explorerUrl, "_blank");
   };
 
-  // Retrieve wallet data from localStorage when the component mounts
   useEffect(() => {
-    const storedAddress = localStorage.getItem("walletAddress");
-    const storedNetworkName = localStorage.getItem("networkName");
-    const storedBalance = localStorage.getItem("balance");
-    const storedUsdValue = localStorage.getItem("usdValue");
-    const storedIsConnected = localStorage.getItem("isConnected");
-
-    if (storedIsConnected === "true") {
-      setWalletAddress(storedAddress);
-      setNetworkName(storedNetworkName || "Unknown Network");
-      setBalance(storedBalance);
-      setUsdValue(storedUsdValue);
-      setIsConnected(true);
-    }
+    connectWallet();
   }, []);
 
   return (
