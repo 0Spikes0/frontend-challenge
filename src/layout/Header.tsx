@@ -5,6 +5,8 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import TapItem from '../components/TapItem';
 import { tapItems } from '../utils/constants';
+import Home from '../components/Home';  
+import Wallet from '../components/Wallet';  
 
 interface ThemeContextType {
     isDarkTheme: boolean;
@@ -18,6 +20,7 @@ const ThemeContext = createContext<ThemeContextType>({
 
 const Header: React.FC = () => {
     const [isDarkTheme, setIsDarkTheme] = useState<boolean>(true);
+    const [activeTab, setActiveTab] = useState<string>("Home");
 
     const toggleTheme = () => {
         setIsDarkTheme((prev) => !prev);
@@ -29,18 +32,34 @@ const Header: React.FC = () => {
         },
     });
 
+    const renderActiveComponent = () => {
+        if (activeTab === "Home") {
+            return <Home />;
+        }
+        if (activeTab === "Wallet") {
+            return <Wallet />;
+        }
+    };
+
     return (
         <ThemeContext.Provider value={{ isDarkTheme, toggleTheme }}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                    <div className="flex justify-center items-center gap-10 mt-6">
-                        {tapItems.map((item, index) => {
-                            return (
-                                <TapItem key={index} title={item.title} icon={item.icon} />
-                            )
-                        })}
-                    </div>
-                    <ToggleButton />
+                <div className="flex justify-center items-center gap-10 mt-6">
+                    {tapItems.map((item, index) => {
+                        return (
+                            <TapItem
+                                key={index}
+                                title={item.title}
+                                icon={item.icon}
+                                onClick={() => setActiveTab(item.title)}
+                                isActive={activeTab === item.title}
+                            />
+                        );
+                    })}
+                </div>
+                <ToggleButton />
+                {renderActiveComponent()}
             </ThemeProvider>
         </ThemeContext.Provider>
     );
