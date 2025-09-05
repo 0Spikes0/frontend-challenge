@@ -42,25 +42,3 @@ The app should run by executing the following commands:
 yarn
 yarn start
 ```
-
-## Extra Materials
-
-Some images for orientation (your dapp doesn't have to look exactly the same).
-
-![simple-1](/uploads/dffa83690db3e0b45469723f30f4df1b/simple-1.png)
-![simple-2](/uploads/a00ae32470145f806d425c80b516be95/simple-2.png)
-![3-dark](/uploads/8f188654382f9cc25b35feeddddf7fd8/3-dark.png)
-![3-light](/uploads/bd99c634bf255e61c1ce1b7270a70e68/3-light.png)
-![simple-3](/uploads/3d91b08e2a9e7b9494126f912f467bf3/simple-3.png)
-![simple-4](/uploads/9b1c2d2803a270f4903d2f79fe1122e3/simple-4.png)
-
-
-Here are some [graphical elements](./assets) that will help you speed up the development.
-
-## Expectations
-
-1. Create a feature branch with your name
-2. Open an MR (merge request) which will allow us to communicate
-3. The more creative you are, the better
-
-Do your best!
