@@ -10,6 +10,8 @@ The dApp should have 2 tabs:
 
 **Home**
 
+![Home Tab Preview](./assets/screenshots/home-tab.png)
+
 When the homepage loads, it should display tokens in a table sorted by price.
 
 Header columns:
@@ -23,6 +25,8 @@ _Make sure the columns are sortable._
 See Energiswap [API endpoint](https://api.energiswap.exchange/v1/assets) that will help you construct the table.
 
 **Wallet**
+
+![Wallet Tab Preview](./assets/screenshots/wallet-tab.png)
 
 When a user clicks on the **Wallet tab** it should open up the wallet page. If Metamask is disconnected, it should
 display the `Connect wallet` button. When Metamask is connected, it will display:
